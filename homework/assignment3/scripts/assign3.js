@@ -4,14 +4,12 @@ function onReady() {
 	$('#searchbutton').on('click', onSearchButtonClick);
 
 	
-function onSearchButtonClick() {
+	function onSearchButtonClick() {
 		imdbSearch($('#search-box').val());
-		
-	}
+		$('#results').table('');
+	}	
 
-
-
-function imdbSearch(query)	{
+	function imdbSearch(query)	{
 		$.get(
 			'http://www.omdbapi.com',
 			{s: query,
@@ -21,17 +19,14 @@ function imdbSearch(query)	{
 			);
 	}
 
-
-function onSearchResults(data){
+	function onSearchResults(data){
 		
-		
+		var i = 0;
 
+		for(var key in data.Search)	{ 
+			$('#results').append('<tr><td>'+data.Search[i].Title+'</td> <td>'+data.Search[i].Year+'</td><td>'+data.Search[i].Type+'</td></tr>');
+			i++;
+		}
+	}
 
-var i = 0;
-
-for(var key in data.Search)	{ 
-	$('#results').append('<tr><td>'+data.Search[i].Title+'</td> <td>'+data.Search[i].Year+'</td><td>'+data.Search[i].Type+'</td></tr>');
-	i++;
-}
-}
 }
