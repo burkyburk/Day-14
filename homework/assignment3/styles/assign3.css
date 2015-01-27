@@ -1,7 +1,36 @@
-#results	{
-	width: 1000px;
-	height: 16px;	
-	border: 1px solid black;
-	display: inline-block;
-	margin-top: 2px;
+html{
+	text-align: center;
+}
+h1{
+	font-size: 28px;
+	margin: 4px 0;
+}
+#seach-box	{
+	margin-bottom: 8px;
+
+}
+#searchbutton {
+	margin-bottom: 8px;
+}
+table {
+	width: 100%;
+}
+
+
+
+
+#results {
+	border: solid 2px black;
+}
+
+.columnTitles {
+	border: solid 2px black;
+	
+}
+td {
+	border:solid 1px black;
+	}
+th {
+	border:solid 2px black;
+	font-size: 20px;
 }
